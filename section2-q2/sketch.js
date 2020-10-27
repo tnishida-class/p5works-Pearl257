@@ -25,7 +25,7 @@ function setup() {
 }
   }
     for(let i = 0; i < 8; i++){
-    for(let j = 0; 6 < j < 8; j++){
+    for(let j = 5; j < 8; j++){
     if(i % 2!=0 && j % 2 == 0){
     fill(0);
     ellipse(size*i+size/2,size*j+size/2,size-5,size-5);}
