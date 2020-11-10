@@ -4,7 +4,7 @@
 function setup(){
   createCanvas(400, 400);
   background(255);
-  balloon("I love keyakizaka46");
+  balloon("One in a million ONCE for TWICE!!");
 }
 
 function balloon(t){
