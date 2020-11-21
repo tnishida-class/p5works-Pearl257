@@ -6,6 +6,7 @@ function setup(){
   createCanvas(200, 200);
   count = 0;
   cycle = 100;
+  if ( count<=50 )
 }
 
 function draw(){
