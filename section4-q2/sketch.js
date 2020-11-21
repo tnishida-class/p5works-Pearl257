@@ -3,34 +3,34 @@ let x, y, vx, vy;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
-  star(250, 50, 40);
   x = width / 2;
   y = height / 2;
   vx = 8;
   vy = 8;
+  star(250, 50, 40);
 }
+
 
 function draw(){
   background(160, 192, 255);
-
-  function star(cx, cy, r){
+    star(cx, cy, r);
     beginShape();
     for(var i = 0; i < 5; i++){
       let theta = TWO_PI * i * 2 / 5 - HALF_PI;
       let x = cx + cos(theta) * r;
       let y = cy + sin(theta) * r;
       vertex(x,y);
-      fill (0);
+      fill(0);
     }
       endShape(CLOSE);
-  }
+}
 
 
   function draw(){
   background(160, 192, 255);
   star(cx, cy, r);
-  x += 2;
-  y -= 2;
+  cx += 2;
+  cy -= 2;
   if(x > width){ x = 0; }
   else if(x < 0){ x = width; }
   if(y > height){ y = 0; }
@@ -41,7 +41,7 @@ function star(cx, cy, r, angle){
   beginShape();
   for(var i = 0; i < 20; i++){
     var theta = TWO_PI * i * 2 / 5 - HALF_PI;
-    // BLANK[1] (hint: angle 分だけ星を回転させるには？)
+    var theta += angle 
     var x = cx + cos(theta) * r;
     var y = cy + sin(theta) * r;
     vertex(x,y);
@@ -51,5 +51,5 @@ function star(cx, cy, r, angle){
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
-}
+  star(width*2,height*2)
 }
