@@ -3,6 +3,7 @@ let x, y, vx, vy;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
+  star(250, 50, 40);
   x = width / 2;
   y = height / 2;
   vx = 8;
@@ -11,9 +12,25 @@ function setup(){
 
 function draw(){
   background(160, 192, 255);
-  // BLANK[2] (hint: 作った star 関数を使います)
 
-  // 端の処理パターン (1) 反対側から出てくる
+  function star(cx, cy, r){
+    beginShape();
+    for(var i = 0; i < 5; i++){
+      let theta = TWO_PI * i * 2 / 5 - HALF_PI;
+      let x = cx + cos(theta) * r;
+      let y = cy + sin(theta) * r;
+      vertex(x,y);
+      fill (0);
+    }
+      endShape(CLOSE);
+  }
+
+
+  function draw(){
+  background(160, 192, 255);
+  star(cx, cy, r);
+  x += 2;
+  y -= 2;
   if(x > width){ x = 0; }
   else if(x < 0){ x = width; }
   if(y > height){ y = 0; }
@@ -34,4 +51,5 @@ function star(cx, cy, r, angle){
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
+}
 }
