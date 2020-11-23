@@ -1,5 +1,6 @@
 // テキスト「アニメーション」
 let x, y, vx, vy;
+let angle;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
@@ -7,14 +8,17 @@ function setup(){
   y = height / 2;
   vx = 8;
   vy = 8;
-  star(250, 160, 40, 0)
+  star(250, 160, 40, 10)
+  angle = 0
 }
 
 function draw(){
-  background(160, 192, 255);
-  star(x, y, 40, 0);
+  background(0);
+  star(x, y, 40, angle);
+  fill(255, 255, 0);
   x += 2;
-  y -= 2;
+  y += 2;
+  angle += 0.1
   if(x > width){ x = 0; }
   else if(x < 0){ x = width; }
   if(y > height){ y = 0; }

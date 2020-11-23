@@ -16,6 +16,5 @@ function draw(){
   ellipse(width / 2, height / 2, size);
   size
   if (count < 50 ) {  size += 2 }
-  else{
-    size -= 2 }
+  else{ size -= 2 }
 }
